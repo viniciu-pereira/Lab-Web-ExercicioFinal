@@ -9,6 +9,7 @@
   "author": "Fabio Faria",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^21.3.9"
+    "@hapi/hapi": "^21.3.9",
+    "joi": "^17.12.3"
   }
 }
