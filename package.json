@@ -1,0 +1,14 @@
+{
+  "name": "api-x",
+  "version": "0.0.1",
+  "description": "Api da aula de lab web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabio Faria",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.9"
+  }
+}
