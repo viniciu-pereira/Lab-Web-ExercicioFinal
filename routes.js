@@ -1,30 +1,17 @@
-const { getProducts, create } = require('./product-controller');
-const Joi = require('joi');
-
+const { getProducts, create } = require('./api/v1/product/product-controller');
+const schema = require('./api/v1/product/product-schema');
 const routes = [
     {
         method: "GET",
-        path: "/products",
+        path: "/v1/products",
         handler: getProducts
     },
     {
         method: "POST",
-        path: "/products",
+        path: "/v1/products",
         options: {
             handler: create,
-            validate: {
-                payload: Joi.object({
-                    name: Joi
-                            .string()
-                            .min(3)
-                            .max(60)
-                            .required(),
-                    quantity: Joi.number()
-                                 .positive()
-                                 .integer()
-                                 .required()
-                })
-            }
+            validate: schema.getProductsSchema
         }
     }
 ];
