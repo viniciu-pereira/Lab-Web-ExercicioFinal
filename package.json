@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^21.3.9",
-    "joi": "^17.12.3"
+    "joi": "^17.12.3",
+    "klaw-sync": "^6.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

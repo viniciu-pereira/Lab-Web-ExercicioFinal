@@ -7,6 +7,15 @@ const server = Hapi.server({
 });
 
 //add routes path to hapi context
-routes.forEach((path) => server.route(path));
+//routes.forEach((path) => server.route(path));
 
-module.exports = server;
+const plugins = [
+    {
+        plugin: routes,
+        options: {
+            routesBaseDir: './api'
+        }
+    }
+];
+
+module.exports = {server, plugins};
