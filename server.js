@@ -6,9 +6,6 @@ const server = Hapi.server({
     host: "0.0.0.0"
 });
 
-//add routes path to hapi context
-//routes.forEach((path) => server.route(path));
-
 const plugins = [
     {
         plugin: routes,
