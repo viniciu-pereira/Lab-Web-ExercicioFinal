@@ -24,6 +24,15 @@ const getById = {
     })
 }
 
+const deleteById = {
+    params: Joi.object({
+        id: Joi
+            .number()
+            .integer()
+            .required()
+    })
+}
+
 const getProducts = {
     query: Joi.object({
         name: Joi
@@ -43,4 +52,6 @@ const getProducts = {
 module.exports = {
     createProductsSchema, 
     getById,
-    getProducts};
+    getProducts,
+    deleteById
+};

@@ -1,4 +1,4 @@
-const { getProducts, create, findById } = require('./product-controller');
+const { getProducts, create, findById, deleteById} = require('./product-controller');
 const schema = require('./product-schema');
 
 const plugin = {
@@ -29,7 +29,15 @@ const plugin = {
                     handler: create,
                     validate: schema.createProductsSchema
                 }
-            }
+            },
+            {
+                method: "DELETE",
+                path: "/v1/products/{id}",
+                options: {
+                    handler: deleteById,
+                    validate: schema.deleteById
+                }
+            },
         ])
     }
 };
