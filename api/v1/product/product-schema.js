@@ -29,6 +29,10 @@ const getProducts = {
         name: Joi
             .string()
             .min(1),
+        quantity: Joi
+            .number()
+            .integer()
+            .min(1),
         status: Joi
                 .string()
                 .valid('ativo', 'inativo', 'pendente')

@@ -6,8 +6,8 @@ const create = async (product) => {
     return repository.save(product);
 }
 
-const list = async () => {
-    return repository.findAll();
+const list = async (filter) => {
+    return repository.findAll(filter);
 }
 
 const findById = async (id) => {
