@@ -7,6 +7,7 @@ const createProductsSchema = {
                 .min(3)
                 .max(60)
                 .required(),
+        value: Joi.number(),
         quantity: Joi.number()
                      .positive()
                      .integer()

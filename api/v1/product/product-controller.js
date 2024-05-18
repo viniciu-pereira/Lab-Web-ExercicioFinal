@@ -10,10 +10,14 @@ const getProducts = async (request, h) => {
 }
 
 const create = async (request, h) => {
-   
-    const result = await business.create(request.payload);
-
-    return h.response(result).code(201);
+    
+    try {
+        const result = await business.create(request.payload);
+        
+        return h.response(result).code(201);
+    } catch(error) {
+        console.log(error);
+    }
 }
 
 const findById = async (request, h) => {
