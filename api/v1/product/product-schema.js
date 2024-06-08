@@ -11,7 +11,10 @@ const createProductsSchema = {
         quantity: Joi.number()
                      .positive()
                      .integer()
-                     .required()
+                     .required(),
+        category: Joi.object( {
+            id: Joi.number().integer()
+        })
     })
 };
 

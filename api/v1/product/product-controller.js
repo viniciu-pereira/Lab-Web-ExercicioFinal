@@ -9,9 +9,12 @@ const getProducts = async (request, h) => {
 }
 
 const create = async (request, h) => {
-    
+
+    const {payload} = request;
+
     try {
-        const result = await business.create(request.payload);
+        payload.categoryId = payload.category.id;
+        const result = await business.create(payload);
 
         return h.response(result).code(201);
     } catch(error) {

@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const database = require('../../../config/db');
+const Category = require('../category/category-model');
 
 const Product = database.sequelize.define('Product', {
     id: {
@@ -21,10 +22,20 @@ const Product = database.sequelize.define('Product', {
     quantity: {
         type: Sequelize.INTEGER,
         field: 'qtd'
+    },
+    categoryId: {
+        type: Sequelize.INTEGER,
+        field: 'cod_cat',
+        references: {
+            model: 'category',
+            key: 'id'
+        }
     }
 }, {
     timestamps: false,
     tableName: 'tb_produto' //nome da tabela banco
 });
+
+Product.belongsTo(Category, {foreignKey: 'categoryId'});
 
 module.exports = Product;
