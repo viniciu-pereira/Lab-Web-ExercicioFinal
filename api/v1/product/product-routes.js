@@ -1,4 +1,4 @@
-const { getProducts, create, findById } = require('./product-controller');
+const { getProducts, create, findById, deleteById} = require('./product-controller');
 const schema = require('./product-schema');
 
 const plugin = {
@@ -10,6 +10,8 @@ const plugin = {
                 method: "GET",
                 path: "/v1/products",
                 options: {
+                    tags: ['api'],
+                    description: 'List of products',
                     handler: getProducts,
                     validate: schema.getProducts
                 }
@@ -18,6 +20,8 @@ const plugin = {
                 method: "GET",
                 path: "/v1/products/{id}",
                 options: {
+                    tags: ['api'],
+                    description: 'Create a product',
                     handler: findById,
                     validate: schema.getById
                 }
@@ -26,10 +30,20 @@ const plugin = {
                 method: "POST",
                 path: "/v1/products",
                 options: {
+                    tags: ['api'],
                     handler: create,
                     validate: schema.createProductsSchema
                 }
-            }
+            },
+            {
+                method: "DELETE",
+                path: "/v1/products/{id}",
+                options: {
+                    tags: ['api'],
+                    handler: deleteById,
+                    validate: schema.deleteById
+                }
+            },
         ])
     }
 };

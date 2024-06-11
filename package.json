@@ -1,6 +1,6 @@
 {
   "name": "api-x",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Api da aula de lab web",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^21.3.9",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.3",
+    "hapi-swagger": "^17.2.1",
     "joi": "^17.12.3",
-    "klaw-sync": "^6.0.0"
+    "klaw-sync": "^6.0.0",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
